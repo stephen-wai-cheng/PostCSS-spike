@@ -1,0 +1,27 @@
+/*Variables*/
+$blue: #0000ff;
+$green: #00ff00;
+$radius: 10px;
+
+.square {
+  background: $blue;
+  border-radius: $radius;
+}
+
+/*Imports*/
+@import "partials/_base.css";
+
+/*Mixins*/
+@define-mixin square $dimension {
+    width: $dimension;
+    height: $dimension;
+}
+
+/*Nesting, variables and mixins*/
+.button {
+  @mixin square 200px;
+  background: $green;
+  &:hover {
+    background: $blue;
+  }
+}
